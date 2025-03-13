@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>CB Games</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>CB Games</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="loader">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar4"></div>
+            <div class="bar5"></div>
+            <div class="bar6"></div>
+            <div class="bar7"></div>
+            <div class="bar8"></div>
+            <div class="bar9"></div>
+            <div class="bar10"></div>
+            <div class="bar11"></div>
+            <div class="bar12"></div>
+        </div>
+
+        <section class="container-character" data-page="2" style="display:none;">
+            <div class="container-img">
+                <img id="character" src="./files/skin-color/skin-base.png" alt="character">
+            </div>
+
+            <div class="buttons-gender">
+                <button id="woman"><img src="./files/icons/woman.png" alt="woman"></button>
+                <button id="men"><img src="./files/icons/men.png" alt="men"></button>
+            </div>
+
+            <div class="buttons-skin-colors">
+                <button id="black"><img src="./files/icons/black.png" alt="color black"></button>
+                <button id="dun"><img src="./files/icons/dun.png" alt="color black"></button>
+                <button id="brown"><img src="./files/icons/brown.png" alt="color black"></button>
+                <button id="white"><img src="./files/icons/white.png" alt="color black"></button>
+            </div>
+
+            <div>
+                <button id="save">Save Character</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="./script/script.js"></script>
+
+    <script>
+        let characterImg = document.getElementById("character");
+        let generoSelecionado = "";
+
+        // FUNÇÕES E EVENTOS PARA ESCOLHA DE GENERO
+        function gender(generoEscolhido) {
+            generoSelecionado = generoEscolhido;
+            characterImg.src = `./files/skin-color/${generoSelecionado}/white.png`;
+        }
+
+        document.getElementById("woman").addEventListener("click", function () {
+            gender("woman");
+        });
+
+        document.getElementById("men").addEventListener("click", function () {
+            gender("men");
+        });
+
+        // FUNÇÃO PARA TROCAR COR DE PELE
+        function changeImg(color) {
+            if (generoSelecionado) {
+                characterImg.src = `./files/skin-color/${generoSelecionado}/${color}.png`;
+            } else {
+                alert("Choose a gender before selecting skin color.");
+            }
+        }
+
+        let black = document.getElementById("black");
+        let dun = document.getElementById("dun");
+        let brown = document.getElementById("brown");
+        let white = document.getElementById("white");
+
+        black.addEventListener("click", () => changeImg("black"));
+        dun.addEventListener("click", () => changeImg("dun"));
+        brown.addEventListener("click", () => changeImg("brown"));
+        white.addEventListener("click", () => changeImg("white"));
+
+        setTimeout(() => {
+            const loader = document.querySelector('.loader');
+            const characterSection = document.querySelector('.container-character');
+            loader.style.display = 'none';
+            characterSection.style.display = 'block';
+        }, 1500);
+
+    </script>
+</body>
+
+</html>
