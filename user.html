@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CB Games - Login</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/user.css">
+</head>
+
+<body>
+    <div class="background"></div>
+
+    <header>
+        <div class="logo">
+            <h1>CB Games</h1>
+        </div>
+    </header>
+
+    <main>
+        <section data-page="register" class="container-register">
+            <div class="forms-register">
+                <div class="title">
+                    <h2>Register here</h2>
+                </div>
+                <form id="register-form">
+                    <div class="input">
+                        <input type="text" value="" id="username" required>
+                        <span>Username</span>
+                    </div>
+
+                    <div class="input">
+                        <input type="email" value="" id="email" required>
+                        <span>E-mail</span>
+                    </div>
+
+                    <div class="input">
+                        <input type="password" value="" id="password" required>
+                        <span>Password (4 digits)</span>
+                    </div>
+
+                    <div class="link-login">
+                        <a href="#" id="show-login">Already registered? Click here</a>
+                    </div>
+
+                    <div class="button-register">
+                        <button type="submit" id="register">Register</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section data-page="login" class="container-login" id="login" style="display: none;">
+            <div class="title-login">
+                <h2>Welcome back</h2>
+            </div>
+            <form id="login-form">
+                <div class="input">
+                    <input type="email" value="" id="email-login" required>
+                    <span>E-mail</span>
+                </div>
+
+                <div class="input">
+                    <input type="password" value="" id="password-login" required>
+                    <span>Password (4 digits)</span>
+                </div>
+
+                <div class="link-register">
+                    <a href="#" id="show-register">Don't have a registration? <br> Click here</a>
+                </div>
+
+                <div class="button-login">
+                    <button type="submit" id="login">Login</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer>&copy; CB games - Ilana Nascimento - 2025</footer>
+
+    <script src="./script/script.jS"></script>
+</body>
+
+</html>
